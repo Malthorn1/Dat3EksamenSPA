@@ -9,10 +9,8 @@ import {
 import "./style.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import facade from "./apiFacade";
-import CatFact from "./CatFact";
-import Pokemon from "./Pokemon";
-import UselessFact from "./UselessFact";
-import KanyeRest from "./KanyeRest";
+import Instructor from "./Instructor";
+import YogaClass from "./YogaClass";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -33,34 +31,30 @@ export default function App() {
               Home
             </NavLink>
           </li>
-          {loggedIn && (
+
+
+
+          {loggedIn &&  (
             <React.Fragment>
+
             <li>
-              <NavLink exact activeClassName="active" to="/catfacts">
-                CatFact
-              </NavLink>
-            </li>
+            <NavLink exact activeClassName="active" to="/YogaClass">
+            YogaClass
+            </NavLink>
+          </li>
+
             <li>
-              <NavLink exact activeClassName="active" to="/pokemon">
-                Pokemon
-              </NavLink>
-            </li>
-            <li>
-              <NavLink exact activeClassName="active" to="/uselessfact">
-                UselessFact
+              <NavLink exact activeClassName="active" to="/instructor">
+              Instructor
               </NavLink>
             </li>
   
             </React.Fragment>
-            
-          )}
+                )}
+          
           
          
-          <li>
-            <NavLink exact activeClassName="active" to="/kanyerest">
-              KanyeRest
-            </NavLink>
-          </li>
+
           <li>
             <NavLink exact activeClassName="active" to="/login">
               Login
@@ -82,17 +76,13 @@ export default function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/catfacts">
-              <CatFact />
+
+
+            <Route path="/instructor">
+              <Instructor />
             </Route>
-            <Route path="/pokemon">
-              <Pokemon />
-            </Route>
-            <Route path="/uselessfact">
-              <UselessFact />
-            </Route>
-            <Route path="/kanyerest">
-              <KanyeRest />
+            <Route path="/YogaClass">
+              <YogaClass />
             </Route>
             <Route exact path="/login">
               {!loggedIn ? (
@@ -116,12 +106,15 @@ function Home() {
   return (
     <div>
       <div className="container">
-      <h2>Hello World</h2>
-      <h3>Please login to see our  awesome stuff</h3>
+      <h2>Hello and Welcome to our Yoga Classes</h2>
+      <h3>Please login to see our awesome stuff</h3>
+   
+
       </div>
       
+      </div>
       
-    </div>
+   
   );
 }
 
@@ -145,7 +138,7 @@ function LogIn({ login }) {
       <h2>Login</h2>
       <form onChange={onChange}>
         <input placeholder="User Name" id="username" />
-        <input placeholder="Password" id="password" />
+        <input type="Password" placeholder="Password" id="password" />
         <button onClick={performLogin}>Login</button>
       </form>
     </div>

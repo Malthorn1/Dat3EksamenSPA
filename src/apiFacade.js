@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/CA3";
+const URL = "https://coffeeaddict.dk/EksamenProjektAPI";
 
 function handleHttpErrors(res) {
   if (!res.ok) {
